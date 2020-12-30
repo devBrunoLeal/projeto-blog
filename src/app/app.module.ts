@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { DestaqueComponent } from './destaque/destaque.component';
 import { LatestComponent } from './latest/latest.component';
 import { ScollprogressDirective } from './directives/scollprogress.directive';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ScollprogressDirective } from './directives/scollprogress.directive';
     HeaderComponent,
     DestaqueComponent,
     LatestComponent,
-    ScollprogressDirective
+    ScollprogressDirective,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
