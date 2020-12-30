@@ -1,0 +1,27 @@
+<div class="divider-text"><p class="text-noticia" style="text-align: center">NOTÍCIAS RECENTES</p></div>
+
+
+<div
+  style="justify-content: left"
+  class="container"
+  *ngFor="let noticia of noticias"
+>
+  <div class="row">
+    <div class="row col-8">
+      <div class="col-4">
+        <div class="imagem-noticia"></div>
+      </div>
+      <div class="col-8 padding-texto">
+        <div class="categoria">
+          <p>{{ noticia.categoria }}</p>
+        </div>
+        <div class="titulo">
+          {{ noticia.titulo }}
+        </div>
+      </div>
+    </div>
+    <div class="col-4 destaques">
+
+    </div>
+  </div>
+</div>
