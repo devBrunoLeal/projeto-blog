@@ -1,18 +1,34 @@
 .principal-conteudo {
   background-color: black;
+  background-size: 100% !important;
+  background-position: center !important;
   width: 480px !important;
   position: relative;
   height: 420px !important;
+  -webkit-transition: background-size 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: background-size 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.principal-conteudo:hover{
+  background-size: 110% !important;
+
 }
 .container {
   margin-top: 20px;
 }
 .principal-secundario {
   background-color: #1647b5;
+  background-size: 100vh !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
   width: 290px !important;
   height: 420px;
   margin-left: 20px;
   position: relative;
+  transition: background-size 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.principal-secundario:hover{
+  background-size: 105vh !important;
 }
 
 .categoria {

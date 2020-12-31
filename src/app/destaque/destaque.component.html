@@ -1,41 +1,38 @@
 <div class="container">
   <div class="principal row">
     <div class="row">
-      <div class="principal-conteudo">
+      <div class="principal-conteudo" [ngStyle]="{'background-image':'url(' + destaques[0].image + ')'}">
         <div class="textos-principal">
           <div class="categoria">
-            <p>RAP NACIONAL</p>
+            <p>{{destaques[0].tags[1]}}</p>
           </div>
           <div class="titulo">
             <p>
-              FLACKO lança clipe do single “FILHO PRÓDIGO” com participação do
-              Borges; confira
+              {{destaques[0].text}}
             </p>
           </div>
         </div>
       </div>
-      <div class="principal-secundario">
+      <div class="principal-secundario" [ngStyle]="{'background-image':'url(' + destaques[4].image + ')'}">
         <div  class="textos-secundario">
           <div class="categoria">
-            <p>RAP NACIONAL</p>
+            <p>{{destaques[4].tags[1]}}</p>
           </div>
           <div style="width: 270px;" class="titulo-secundario">
             <p>
-              FLACKO lança clipe do single “FILHO PRÓDIGO” com participação do
-              Borges; confira
+              {{destaques[4].text}}
             </p>
           </div>
         </div>
       </div>
-      <div class="principal-secundario">
+      <div class="principal-secundario" [ngStyle]="{'background-image':'url(' + destaques[2].image + ')'}">
         <div class="textos-secundario">
           <div class="categoria">
-            <p>RAP NACIONAL</p>
+            <p>{{destaques[2].tags[1]}}</p>
           </div>
           <div style="width: 270px;" class="titulo-secundario">
-            <p>
-              FLACKO lança clipe do single “FILHO PRÓDIGO” com participação do
-              Borges; confira
+            <p >
+              {{destaques[2].text}}
             </p>
           </div>
         </div>

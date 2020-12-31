@@ -9,13 +9,23 @@ import { PostagensService } from 'src/services/postagens.service';
 export class LatestComponent implements OnInit {
 
 
-  public noticias 
-    
+  public noticias
+
   constructor(private service: PostagensService) { }
 
   ngOnInit(): void {
+
+    this.noticiasService(1);
     this.service.listPostagens().subscribe(res => {
-      this.noticias = res;
+
+    })
+  }
+
+  noticiasService(num) {
+    this.service.getPost(num).subscribe(res => {
+      console.log(res);
+      this.noticias = res
+      this.noticias = this.noticias.data
     })
   }
 
