@@ -6,6 +6,7 @@
 .navbar{
   position: fixed;
   top: 0;
+  box-shadow:black 10px -10px 20px 2px;
   background-color: aliceblue;
   z-index: 10000;
   width: 100%;

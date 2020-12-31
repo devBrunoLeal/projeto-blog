@@ -8,6 +8,11 @@ import { DestaqueComponent } from './destaque/destaque.component';
 import { LatestComponent } from './latest/latest.component';
 import { ScollprogressDirective } from './directives/scollprogress.directive';
 import { FooterComponent } from './footer/footer.component';
+import { AdminComponent } from './admin/admin.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PostagensService } from 'src/services/postagens.service';
+import { HttpClientModule } from '@angular/common/http';
+import { PublicacaoComponent } from './publicacao/publicacao.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +21,17 @@ import { FooterComponent } from './footer/footer.component';
     DestaqueComponent,
     LatestComponent,
     ScollprogressDirective,
-    FooterComponent
+    FooterComponent,
+    AdminComponent,
+    PublicacaoComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [PostagensService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

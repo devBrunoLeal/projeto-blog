@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostagensService } from 'src/services/postagens.service';
 
 @Component({
   selector: 'app-latest',
@@ -8,36 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class LatestComponent implements OnInit {
 
 
-  public noticias = [
-    {
-      urlFoto: "",
-      categoria: "Funk",
-      titulo: "Lil Nas X responde piadas sobre ser “cantor de apenas 1 hit”",
-    },
-    {
-      urlFoto: "",
-      categoria: "Rap",
-      titulo: "Diddy diz que PARTYNEXTDOOR é o melhor compositor em atividade”",
-    },
-    {
-      urlFoto: "",
-      categoria: "Funk",
-      titulo: "Lil Nas X responde piadas sobre ser “cantor de apenas 1 hit”",
-    },
-    {
-      urlFoto: "",
-      categoria: "Funk",
-      titulo: "Lil Nas X responde piadas sobre ser “cantor de apenas 1 hit”",
-    },
-    {
-      urlFoto: "",
-      categoria: "Igor",
-      titulo: "IGOR”",
-    },
-  ]
-  constructor() { }
+  public noticias 
+    
+  constructor(private service: PostagensService) { }
 
   ngOnInit(): void {
+    this.service.listPostagens().subscribe(res => {
+      this.noticias = res;
+    })
   }
 
 }

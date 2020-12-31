@@ -1,27 +1,66 @@
-<div class="divider-text"><p class="text-noticia" style="text-align: center">NOTÍCIAS RECENTES</p></div>
+<div class="divider-text">
+  <div class="text-noticia" style="text-align: left">  <p>NOTÍCIA RECENTES </p></div>
+</div>
 
 
-<div
-  style="justify-content: left"
-  class="container"
-  *ngFor="let noticia of noticias"
->
+<div style="justify-content: left" class="container">
   <div class="row">
-    <div class="row col-8">
+    <div *ngFor="let noticia of noticias" class="row mt-2 col-9">
       <div class="col-4">
-        <div class="imagem-noticia"></div>
+        <div class="imagem-noticia" [routerLink]="['/publicacao/'+noticia.id]"></div>
       </div>
       <div class="col-8 padding-texto">
         <div class="categoria">
-          <p>{{ noticia.categoria }}</p>
+          <p>{{ noticia.genero }}</p>
         </div>
-        <div class="titulo">
+        <div class="titulo" [routerLink]="['/publicacao/'+noticia.id]">
           {{ noticia.titulo }}
+
         </div>
       </div>
     </div>
-    <div class="col-4 destaques">
+    <div class="col-3 destaques manter-topo">
+      <div class="row">
+        <p class="siga-p">SIGA NOSSAS REDES SOCIAIS</p>
+        <div class="redes row">
 
+
+          <div class="col rede"><img src="../../assets/facebook.png"></div>
+          <div class="col rede"><img src="../../assets/instagram.png"></div>
+          <div class="col rede"><img src="../../assets/twitter.png"></div>
+          <div class="col rede"><img src="../../assets/youtube.png"></div>
+        </div>
+
+      </div>
+      <div class="row">
+        <p class="siga-p mt-4">EM ALTA</p>
+        <div class="em-alta row">
+          <div class="col img-alta padding-texto-alta">
+            <div class="textos-destaque">
+              <div class="categoria">
+                <p>TESTE</p>
+              </div>
+              <div class="titulo-alta">
+                Mãe do Juice WRLD faz desabafo sobre morte do rapper: “meu maior medo era ele tivesse uma overdose”
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+
+      <div class="titulos-alta"  >
+        <div class="row" *ngFor="let noticia of noticias">
+          <div class="row">
+            <p>
+              {{noticia.titulo}}
+            </p>
+
+          </div>
+            
+        </div>
+      </div>
     </div>
   </div>
 </div>
