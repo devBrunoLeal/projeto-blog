@@ -1,3 +1,4 @@
+import { Title } from '@angular/platform-browser';
 import { Component, Input, OnInit } from '@angular/core';
 import { GlobalService } from 'src/services/global.service';
 import { PostagensService } from 'src/services/postagens.service';
@@ -15,10 +16,10 @@ export class LatestComponent implements OnInit {
   public alta_destaque;
   public alta = [];
 
-  constructor(private service: PostagensService, public post: GlobalService) { }
+  constructor(private service: PostagensService, public post: GlobalService, public title: Title) { }
 
   ngOnInit() {
-
+  this.title.setTitle("Segue o fluxo - O melhor do funk")
 
   this.post.get('posts/search/em-alta/10').subscribe(res =>{
     console.log(res);

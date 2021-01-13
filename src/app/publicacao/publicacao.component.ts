@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Title } from "@angular/platform-browser";
 import { ActivatedRoute, Params } from "@angular/router";
 import { GlobalService } from "src/services/global.service";
 import { PostagensService } from "src/services/postagens.service";
@@ -11,7 +12,7 @@ import { PostagensService } from "src/services/postagens.service";
 export class PublicacaoComponent implements OnInit {
   activatedRoute: any;
 
-  constructor(private active: ActivatedRoute, private service: GlobalService) {}
+  constructor(private active: ActivatedRoute, private service: GlobalService, public titleService: Title) {}
 
   public id;
   public publicacao;
@@ -25,6 +26,7 @@ export class PublicacaoComponent implements OnInit {
       this.service.get("posts/" +res.id).subscribe((res) => {
         console.log(res);
         this.publicacao = res;
+        this.titleService.setTitle(res.title);
       });
     })
 
