@@ -1,0 +1,26 @@
+<div *ngIf="noticias" >
+  <div *ngFor="let noticia of noticias" class="row mt-2">
+
+    <div class="col-4">
+      <div  class="imagem-noticia" [ngStyle]="{'background-image':'url(' + noticia.featuredImgUrl + ')'}" [routerLink]="['/publicacao/'+noticia.idTitle]">
+
+      </div>
+    </div>
+    <div class="col-8 padding-texto">
+      <div [routerLink]="['/categoria/'+noticia.category]" class="categoria">
+        <p>{{ noticia.category }}</p>
+      </div>
+      <div class="titulo" [routerLink]="['/publicacao/'+noticia.idTitle]">
+        {{ noticia.title}}
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<ul>
+  <li style="display: none;" *ngFor="let item of collection | paginate: { itemsPerPage: 10, currentPage: p }">{{ item }}</li>
+</ul>
+<hr>
+<pagination-controls maxSize="10" style="margin: auto;" previousLabel="Anterior" nextLabel="Próximo" (pageChange)="pageChanged($event)"></pagination-controls>
+<hr style="margin-bottom: 100px">

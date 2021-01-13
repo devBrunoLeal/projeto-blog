@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { GlobalService } from 'src/services/global.service';
 import { PostagensService } from 'src/services/postagens.service';
 
 @Component({
@@ -8,25 +9,26 @@ import { PostagensService } from 'src/services/postagens.service';
 })
 export class LatestComponent implements OnInit {
 
+  @Input() show;
+  @Input() titulo;
+  public noticias;
+  public alta_destaque;
+  public alta = [];
 
-  public noticias
+  constructor(private service: PostagensService, public post: GlobalService) { }
 
-  constructor(private service: PostagensService) { }
+  ngOnInit() {
 
-  ngOnInit(): void {
 
-    this.noticiasService(1);
-    this.service.listPostagens().subscribe(res => {
-
+  this.post.get('posts/search/em-alta/10').subscribe(res =>{
+    console.log(res);
+     this.alta = res;
     })
+
+
+
   }
 
-  noticiasService(num) {
-    this.service.getPost(num).subscribe(res => {
-      console.log(res);
-      this.noticias = res
-      this.noticias = this.noticias.data
-    })
-  }
+
 
 }

@@ -1,0 +1,85 @@
+<app-upload-foto style="width: 100% !important;"></app-upload-foto>
+
+<form [formGroup]="form">
+
+<div class="row">
+  <div class="form-group col">
+    <label for="inputPassword" class="col-sm-2 col-form-label"
+      >Titulo:</label
+    >
+    <div class="col-sm-10">
+      <input
+        type="text"
+        formControlName="title"
+        class="form-control"
+        id="inputPassword"
+        placeholder="Segue o fluxo"
+      />
+    </div>
+  </div>
+
+  <div class="form-group col">
+    <label for="inputPassword" class="col-sm-2 col-form-label"
+      >Foto:</label
+    >
+    <div class="col-sm-10">
+      <input
+        type="text"
+        formControlName="featuredImgUrl"
+        class="form-control"
+        id="inputPassword"
+        placeholder="URL foto"
+      />
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="form-group col">
+    <label class="col-sm-2 col-form-label" for="exampleFormControlSelect1">Categoria:</label>
+    <select style="width: 200px;" formControlName="category" class="ml-4 col-sm-10 form-control" id="exampleFormControlSelect1">
+      <option *ngFor="let item of categorias">{{item.description}}</option>
+    </select>
+  </div>
+
+
+
+  <div class="form-group col">
+    <label class="col-sm-2 col-form-label" for="exampleFormControlSelect1">Destaque?</label>
+    <select style="width: 200px;" formControlName="featured" (change)="select(this)" class="ml-4 col-sm-10 form-control" id="exampleFormControlSelect1">
+      <option value="true">Sim</option>
+      <option value="false">Não</option>
+    </select>
+  </div>
+
+  <div class="form-group col" *ngIf="form.get('featured').value == 'true'">
+    <label for="inputPassword" class="col-sm-2 col-form-label"
+      >Posição:</label
+    >
+    <div class="col-sm-10">
+      <input min="1" max="5"
+        type="number"
+        formControlName="position"
+        class="form-control"
+        id="inputPassword"
+        placeholder="Digite a posição do destaque"
+      />
+    </div>
+  </div>
+
+
+</div>
+
+
+
+<ckeditor (change)="onChange($event)" data="<p>Hello, world!</p>" ></ckeditor>
+
+<div style="width: 100%;" class="text-center">
+  <button style="width: 100px;" (click)="enviarPost()" class="btn btn-primary mt-5 justify-centent-center"> Enviar </button>
+</div>
+
+</form>
+<div [innerHTML]="data | safeHtml">
+
+</div>

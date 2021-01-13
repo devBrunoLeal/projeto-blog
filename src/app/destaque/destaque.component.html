@@ -1,44 +1,49 @@
 <div class="container">
   <div class="principal row">
     <div class="row">
-      <div class="principal-conteudo" [ngStyle]="{'background-image':'url(' + destaques[0].image + ')'}">
-        <div class="textos-principal">
-          <div class="categoria">
-            <p>{{destaques[0].tags[1]}}</p>
+      <div *ngFor="let destaque of destaques; let i = index" class="destaques">
+        <div *ngIf="i == 0" class="principal-conteudo" [routerLink]="['/publicacao/'+destaques[0].idTitle]" [ngStyle]="{'background-image':'url(' + destaques[0].featuredImgUrl + ')'}">
+          <div class="textos-principal">
+            <div class="categoria">
+              <p>{{destaque.category}}</p>
+            </div>
+            <div class="titulo">
+              <p>
+                {{destaque.title}}
+              </p>
+            </div>
           </div>
-          <div class="titulo">
-            <p>
-              {{destaques[0].text}}
-            </p>
+        </div>
+        <div *ngIf="i == 1" class="principal-secundario" [routerLink]="['/publicacao/'+destaques[1].idTitle]" [ngStyle]="{'background-image':'url(' + destaques[1].featuredImgUrl + ')'}">
+          <div  class="textos-secundario">
+            <div class="categoria">
+              <p>{{destaque.category}}</p>
+            </div>
+            <div style="width: 270px;" class="titulo-secundario">
+              <p>
+                {{destaque.title}}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="i == 2" class="principal-secundario" [routerLink]="['/publicacao/'+destaques[2].idTitle]" [ngStyle]="{'background-image':'url(' + destaques[2].featuredImgUrl + ')'}">
+          <div class="textos-secundario">
+            <div class="categoria">
+              <p>{{destaque.category}}</p>
+            </div>
+            <div style="width: 270px;" class="titulo-secundario">
+              <p >
+                {{destaque.title}}
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="principal-secundario" [ngStyle]="{'background-image':'url(' + destaques[4].image + ')'}">
-        <div  class="textos-secundario">
-          <div class="categoria">
-            <p>{{destaques[4].tags[1]}}</p>
-          </div>
-          <div style="width: 270px;" class="titulo-secundario">
-            <p>
-              {{destaques[4].text}}
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="principal-secundario" [ngStyle]="{'background-image':'url(' + destaques[2].image + ')'}">
-        <div class="textos-secundario">
-          <div class="categoria">
-            <p>{{destaques[2].tags[1]}}</p>
-          </div>
-          <div style="width: 270px;" class="titulo-secundario">
-            <p >
-              {{destaques[2].text}}
-            </p>
-          </div>
-        </div>
-      </div>
+
     </div>
   </div>
 </div>
+<div *ngIf="noticias">
+  <app-latest  [show]='true'><app-posts [p]="page+1"  (pageSaida)="callNumber($event)" [num]='num' [noticias]="noticias"></app-posts></app-latest>
+</div>
 
-<app-latest></app-latest>

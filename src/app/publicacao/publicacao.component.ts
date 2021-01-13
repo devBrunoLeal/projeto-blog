@@ -1,28 +1,33 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { PostagensService } from 'src/services/postagens.service';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Params } from "@angular/router";
+import { GlobalService } from "src/services/global.service";
+import { PostagensService } from "src/services/postagens.service";
 
 @Component({
-  selector: 'app-publicacao',
-  templateUrl: './publicacao.component.html',
-  styleUrls: ['./publicacao.component.css']
+  selector: "app-publicacao",
+  templateUrl: "./publicacao.component.html",
+  styleUrls: ["./publicacao.component.css"],
 })
 export class PublicacaoComponent implements OnInit {
+  activatedRoute: any;
 
-  constructor(private active: ActivatedRoute,
-    private service: PostagensService) { }
+  constructor(private active: ActivatedRoute, private service: GlobalService) {}
 
-
-    public publicacao;
+  public id;
+  public publicacao;
   ngOnInit() {
-      let id = this.active.snapshot.paramMap.get("id");
+    let id = this.active.snapshot.paramMap.get("id");
 
-      console.log(id)
+    console.log(id);
 
-      this.service.umaPostagem(id).subscribe(res =>{
+    this.active.params.subscribe(res => {
+      console.log(res);
+      this.service.get("posts/" +res.id).subscribe((res) => {
         console.log(res);
         this.publicacao = res;
-      })
-  }
+      });
+    })
 
+
+  }
 }

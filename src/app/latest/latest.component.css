@@ -20,7 +20,7 @@ padding-bottom: 10px;
     width: 290px;
     height: 180px;
     background-position: center;
-    background-size: 100% !important;
+    background-size: 35vh !important;
     background-repeat: no-repeat;
     background: black;
     -webkit-transition: background-size 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -28,7 +28,7 @@ padding-bottom: 10px;
 }
 
 .imagem-noticia:hover{
-  background-size: 110% !important;
+  background-size: 38vh  !important;
 
 
 }
@@ -55,7 +55,6 @@ padding-bottom: 10px;
 .categoria {
   background: #f1f1f1;
   color: #010101;
-  margin-left: 15px;
   display: inline-block;
   font-family: "poppinssemibold";
   letter-spacing: 0.5px;
@@ -88,7 +87,9 @@ padding-bottom: 10px;
 .titulo{
     font-size: 2rem;
     line-height: 2.4rem;
+    max-width: 455px !important;
     font-weight: bold;
+    min-width: 390px !important;
 }
 .siga-p{
   font-weight: bold;
@@ -109,6 +110,8 @@ padding-bottom: 10px;
   background: black;
   width: 300px;
   height: 220px;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: absolute;
   left: -3px;
   top: 149px;

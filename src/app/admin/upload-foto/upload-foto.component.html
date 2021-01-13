@@ -1,0 +1,27 @@
+
+<div class="center" style="">
+  <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"
+  (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+      <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+       Selecione ou arraste as fotos
+        <button type="button" class="btn btn-dark ml-3" (click)="openFileSelector()">Procurar fotos</button>
+      </ng-template>
+  </ngx-file-drop>
+  <div class="upload-table">
+      <table class="table">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Link</th>
+              </tr>
+          </thead>
+          <tbody class="upload-name-style">
+              <tr *ngFor="let item of filesLink; let i=index">
+                  <td><strong>{{ item.nome}}</strong></td>
+                  <td><strong>{{ item.link}}</strong></td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+

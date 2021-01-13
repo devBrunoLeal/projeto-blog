@@ -1,0 +1,23 @@
+<div class="container m-auto" >
+  <div class="row">
+    <div class="col">
+      <button type="button" (click)="show('criar')" class="btn btn-primary button-post">Criar</button>
+    </div>
+    <div class="col">
+      <button type="button" (click)="show('editar')"  class="btn btn-primary button-post">Editar</button>
+    </div>
+    <div class="col">
+      <button type="button" (click)="show('destaque')" class="btn btn-primary button-post">Destaques</button>
+    </div>
+    <div class="col">
+      <button type="button" (click)="show('deletar')" class="btn btn-danger button-post">Deletar</button>
+    </div>
+  </div>
+  <hr>
+  <div class="row mt-4">
+    <app-criar style="width: 100%;" *ngIf="criar"></app-criar>
+    <app-editar style="width: 100%;" *ngIf="editar"></app-editar>
+    <app-editar-destaque style="width: 100%;" *ngIf="destaque"></app-editar-destaque>
+    <app-deletar style="width: 100%;" *ngIf="deletar"></app-deletar>
+  </div>
+</div>

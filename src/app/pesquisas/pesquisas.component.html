@@ -1,0 +1,1 @@
+<app-latest [titulo]="titulo" [show]='true'><app-posts [p]="pagina+1" *ngIf="resultado" [num]="num" (pageSaida)="paginate($event)" [noticias]="resultado"></app-posts></app-latest>

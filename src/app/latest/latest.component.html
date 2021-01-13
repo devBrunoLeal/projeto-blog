@@ -1,27 +1,17 @@
-<div class="divider-text">
-  <div class="text-noticia" style="text-align: left">  <p>NOTÍCIA RECENTES </p></div>
+<div class="divider-text container" *ngIf="show">
+  <div *ngIf="!titulo" class="text-noticia" style="text-align: left;font-weight:bold"> NOTÍCIAS <p style="display: inline; color: #1647b5 ">RECENTES</p>  </div>
+  <div *ngIf="titulo" class="text-noticia" style="text-align: left;font-weight:bold"> {{titulo}} </div>
 </div>
 
 
 <div style="justify-content: left" class="container">
   <div class="row">
-    <div *ngFor="let noticia of noticias" class="row mt-2 col-9">
-      <div class="col-4">
-        <div  class="imagem-noticia" [ngStyle]="{'background-image':'url(' + noticia.image + ')'}" [routerLink]="['/publicacao/'+noticia.id]">
+    <div  class="col-9">
+     <ng-content>
 
-        </div>
-      </div>
-      <div class="col-8 padding-texto">
-        <div class="categoria">
-          <p>{{ noticia.tags[1] }}</p>
-        </div>
-        <div class="titulo" [routerLink]="['/publicacao/'+noticia.id]">
-          {{ noticia.text}}
-
-        </div>
-      </div>
+     </ng-content>
     </div>
-    <div class="col-3 destaques manter-topo">
+    <div class="col destaques">
       <div class="row">
         <p class="siga-p">SIGA NOSSAS REDES SOCIAIS</p>
         <div class="redes row">
@@ -34,16 +24,16 @@
         </div>
 
       </div>
-      <div class="row">
+      <div *ngIf="alta[0]" class="row">
         <p class="siga-p mt-4">EM ALTA</p>
         <div class="em-alta row">
-          <div class="col img-alta padding-texto-alta">
+          <div [routerLink]="['/publicacao/'+alta[0].idTitle]" [ngStyle]="{'background-image':'url(' + alta[0].featuredImgUrl + ')'}" class="col img-alta padding-texto-alta">
             <div class="textos-destaque">
-              <div class="categoria">
-                <p>TESTE</p>
+              <div [routerLink]="['/categoria/'+alta[0].category]" class="categoria ml-2">
+                <p >{{alta[0].category}}</p>
               </div>
               <div class="titulo-alta">
-                Mãe do Juice WRLD faz desabafo sobre morte do rapper: “meu maior medo era ele tivesse uma overdose”
+               {{alta[0].title}}
               </div>
             </div>
 
@@ -53,10 +43,10 @@
       </div>
 
       <div class="titulos-alta"  >
-        <div class="row" *ngFor="let noticia of noticias">
-          <div class="row">
+        <div class="row" *ngFor="let noticia of alta; let i = index">
+          <div class="row" [routerLink]="['/publicacao/'+noticia.idTitle]" *ngIf="i >= 1">
             <p>
-              {{noticia.text}}
+              {{noticia.title}}
             </p>
 
           </div>

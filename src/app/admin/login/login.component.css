@@ -1,0 +1,30 @@
+.conteudo-login{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  background-image: url(../../../assets/background-segue.jpg) !important;
+  backdrop-filter: grayscale(0.8);
+}
+main{
+  margin: auto;
+}
+
+.modal-login{
+  border: #1647b5 2px solid;
+  justify-content: center;
+  margin-top: 200px !important;
+  max-width: 600px;
+  height: 300px;
+}
+
+::ng-deep .button-enviar{
+  width: 100px !important;
+  padding-left: 10px;
+}
+
+::ng-deep .modal-login .mat-fab.mat-primary, .mat-flat-button.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
+  background-color: #1647b5;
+}
