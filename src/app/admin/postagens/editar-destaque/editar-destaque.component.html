@@ -1,1 +1,19 @@
-<p>editar-destaque works!</p>
+
+<div class="exibir-publi row" *ngFor="let item of publicacao">
+  <div class="publicacao row" >
+    <div class="col">
+      <img height="30" style="height: 100px;" [src]="item.featuredImgUrl" />
+    </div>
+    <div class="col">
+      <p><b>Titulo:</b> {{item.title}}</p>
+      <p><b>Titulo id:</b> {{item.idTitle}}</p>
+      <p><b>Views:</b> {{item.views}}</p>
+      <p><b>Data:</b> {{item.published}}</p>
+      <b>Posição destaque: <h3>{{item.situation.position}}</h3></b>
+    </div>
+    <div class="col">
+      <button (click)="editarPost(item)">Retirar destaque</button>
+    </div>
+  </div>
+  <hr style="border: solid 1px black;">
+</div>

@@ -1,58 +1,101 @@
-<div class="divider-text container" *ngIf="show">
-  <div *ngIf="!titulo" class="text-noticia" style="text-align: left;font-weight:bold"> NOTÍCIAS <p style="display: inline; color: #1647b5 ">RECENTES</p>  </div>
-  <div *ngIf="titulo" class="text-noticia" style="text-align: left;font-weight:bold"> {{titulo}} </div>
-</div>
 
 
-<div style="justify-content: left" class="container">
-  <div class="row">
-    <div  class="col-9">
-     <ng-content>
+<div class="wrapper">
 
-     </ng-content>
+  <section class="loop col-content">
+    <header *ngIf="!titulo && show" class="heading max">
+      <h2 class="title title--small title--section">
+        Noticias
+        <span class="title__color">Recentes</span>
+      </h2>
+    </header>
+
+    <header *ngIf="titulo && show" class="heading max">
+      <h2 class="title title--small title--section">
+        {{titulo}}
+      </h2>
+    </header>
+
+   <ng-content>
+
+   </ng-content>
+  </section>
+  <aside class="sidebar col-sidebar" role="complementary">
+    <div id="lt_social_widget-5" class="widget widget--social">
+      <h4 class="title title--smaller title--upper">
+        Siga Nossas Redes Sociais
+      </h4>
+      <ul class="widget__social">
+        <li>
+          <a
+            class="widget__social__facebook"
+            href=""
+            target="_blank"
+            rel="noopener"
+            ><img
+              class="icon"
+              style="width: 27px !important;"
+              src="../../assets/facebook.png"
+              alt="Facebook"
+          /></a>
+        </li>
+        <li>
+          <a
+            class="widget__social__instagram"
+            href=""
+            target="_blank"
+            rel="noopener"
+            ><img
+              class="icon"
+              src="../../assets/instagram.png"
+              alt="Instagram"
+          /></a>
+        </li>
+        <li>
+          <a
+            class="widget__social__twitter"
+            href=""
+            target="_blank"
+            rel="noopener"
+            ><img
+              class="icon"
+              src="../../assets/twitter.png"
+              alt="Twitter"
+          /></a>
+        </li>
+      </ul>
     </div>
-    <div class="col destaques">
-      <div class="row">
-        <p class="siga-p">SIGA NOSSAS REDES SOCIAIS</p>
-        <div class="redes row">
-
-
-          <div class="col rede"><img src="../../assets/facebook.png"></div>
-          <div class="col rede"><img src="../../assets/instagram.png"></div>
-          <div class="col rede"><img src="../../assets/twitter.png"></div>
-          <div class="col rede"><img src="../../assets/youtube.png"></div>
-        </div>
-
-      </div>
-      <div *ngIf="alta[0]" class="row">
-        <p class="siga-p mt-4">EM ALTA</p>
-        <div class="em-alta row">
-          <div [routerLink]="['/publicacao/'+alta[0].idTitle]" [ngStyle]="{'background-image':'url(' + alta[0].featuredImgUrl + ')'}" class="col img-alta padding-texto-alta">
-            <div class="textos-destaque">
-              <div [routerLink]="['/categoria/'+alta[0].category]" class="categoria ml-2">
-                <p >{{alta[0].category}}</p>
-              </div>
-              <div class="titulo-alta">
-               {{alta[0].title}}
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-      <div class="titulos-alta"  >
-        <div class="row" *ngFor="let noticia of alta; let i = index">
-          <div class="row" [routerLink]="['/publicacao/'+noticia.idTitle]" *ngIf="i >= 1">
-            <p>
-              {{noticia.title}}
-            </p>
-
-          </div>
-
-        </div>
+    <div id="custom_html-3" class="widget_text widget widget_custom_html">
+      <div class="textwidget custom-html-widget">
+       <!-- Anuncio fica aqui -->
       </div>
     </div>
-  </div>
+    <div id="lt_featured_posts_widget-5" class="widget widget--posts">
+      <h4 class="title title--smaller title--upper">Em Alta</h4>
+      <ul class="widget__posts">
+        <li *ngIf="alta[0]"  [routerLink]="['/publicacao/'+alta[0].idTitle]" [ngStyle]="{'background-image':'url(' + alta[0].featuredImgUrl + ')'}"
+          class="widget__posts__item"
+        >
+          <div class="widget__posts__item__description">
+            <a class="title-cat" [routerLink]="['/categoria/'+alta[0].category]" href=""
+              >{{alta[0].category}}</a
+            >
+            <a
+              class="widget__posts__item__title"
+              href="mae-do-juice-wrld-faz-desabafo-sobre-morte-do-rapper-meu-maior-medo-era-ele-tivesse-uma-overdose.html"
+              >{{alta[0].title}}</a
+            >
+          </div>
+        </li>
+        <li class="widget__posts__item"   *ngFor="let noticia of alta; let i = index">
+          <a *ngIf="i >= 1"
+            [routerLink]="['/publicacao/'+noticia.idTitle]"
+            class="widget__posts__item__title"
+            href=""
+            >{{noticia.title}}</a
+          >
+        </li>
+      </ul>
+    </div>
+  </aside>
 </div>

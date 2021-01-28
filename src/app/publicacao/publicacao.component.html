@@ -1,16 +1,231 @@
-<app-latest><div class="titulo-publi">
-  <h1>{{publicacao.title}}</h1>
 
-  <div class="sub-titulo">
-      <p class="sub-titulo">{{publicacao.title}}
-      </p>
+<app-latest *ngIf="publicacao && user">
+  <main class="main max" id="main" role="main">
+    <div class="wrapper">
+      <section style="width: 100%" class="content-area col-content">
+        <header class="heading max">
+          <a class="title-cat" href="">{{ publicacao.category }}</a>
+          <h1 class="title title--big">
+            {{ publicacao.title }}
+          </h1>
+          <div class="sub-titulo">
+            <p class="sub-titulo">{{ publicacao.title }}</p>
+          </div>
+          <hr />
+          <span class="byline">
+            <a class="byline__item" href=""
+              ><img class="icon" [src]="user.imgUrl" alt="" />{{ user.name }}</a
+            ><span class="byline__item"
+              ><img class="icon" src="images/icons-time.svg" alt="" />{{
+                publicacao.published
+              }}</span
+            >
+            <div class="share">
+              <b class="share__title">compartilhe:</b
+              ><a class="share__button" href="" target="blank" rel="noopener"
+                ><img
+                  class="icon"
+                  src="../../assets/facebook.png"
+                  alt="Compartilhar no Facebook" /></a
+              ><a class="share__button" href="" target="blank" rel="noopener"
+                ><img
+                  class="icon"
+                  src="../../assets/twitter.png"
+                  alt="Compartilhar no Twitter" /></a
+              ><a class="share__button" href="" target="blank" rel="noopener"
+                ><img
+                  class="icon"
+                  src="../../assets/wp.png"
+                  alt="Compartilhar no Whatsapp"
+              /></a></div
+          ></span>
+        </header>
+        <article
+          role="article"
+          id="post-100506"
+          class="content-area__body content max post-100506 post type-post status-publish format-standard has-post-thumbnail hentry category-rap-nacional tag-lancamentos"
+        >
+          <figure class="wp-block-image size-large">
+            <img
+              loading="lazy"
+              width="758"
+              height="424"
+              [src]="publicacao.featuredImgUrl"
+              alt=""
+              class="wp-image-100507"
+              sizes="(max-width: 758px) 100vw, 758px"
+            />
+          </figure>
+          <div *ngIf="scriptLoaded"[innerHTML]="publicacao.content| safeHtml">
+
+          </div>
+        </article>
+        <footer class="content-area__footer max">
+          <ul class="content-area__tags">
+            <li>
+              <a href="lancamentos.html" rel="tag">Lançamentos</a>
+            </li>
+          </ul>
+          <div class="share">
+            <b class="share__title">compartilhe:</b
+            ><a class="share__button" href="" target="blank" rel="noopener"
+              ><img
+                class="icon"
+                src="../../assets/facebook.png"
+
+                alt="Compartilhar no Facebook" /></a
+            ><a class="share__button" href="" target="blank" rel="noopener"
+              ><img
+                class="icon"
+                src="../../assets/twitter.png"
+                alt="Compartilhar no Twitter" /></a
+            ><a class="share__button" href="" target="blank" rel="noopener"
+              ><img
+                class="icon"
+                src="../../assets/wp.png"
+                alt="Compartilhar no Whatsapp"
+            /></a>
+          </div>
+          <div class="author max">
+            <span class="author__avatar"
+              ><img
+                [src]="user.imgUrl"
+                width="90"
+                height="90"
+                [alt]="user.name"
+                class="avatar avatar-90 wp-user-avatar wp-user-avatar-90 alignnone photo"
+            /></span>
+            <div class="author__bio">
+              <b class="title title--smaller"
+                ><a href="" rel="author">{{ user.name }}</a></b
+              >
+              {{ user.about }}
+              <ul class="author__social">
+                <li>
+                  <a href="" target="_blank" rel="noopener nofollow"
+                    ><img src="../../assets/facebook.png" alt="Facebook"
+                  /></a>
+                </li>
+                <li>
+                  <a href="" target="_blank" rel="noopener nofollow"
+                    ><img src="../../assets/twitter.png" alt="Twitter"
+                  /></a>
+                </li>
+                <li>
+                  <a href="" target="_blank" rel="noopener nofollow"
+                    ><img src="../../assets/instagram.png" alt="Instagram"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+        <div class="comments max max--margin-top" id="comments">
+          <h4 class="title title--small title--upper">Comentários:</h4>
+          <div id="frame_idd">
+
+          </div>
+        </div>
+
+        <!-- <div class="related max max--margin-top">
+    <h4 class="title title--small title--upper">
+      Confira tambémm:
+    </h4>
+    <div class="related__posts">
+      <article class="loop__item" role="article">
+        <div class="loop__item__thumb">
+          <a
+            href="vndroid-e-yannick-hara-se-unem-em-novo-single-cyberpunk-confira.html"
+          >
+            <img
+              class="thumb"
+              alt="VNDROID e Yannick Hara se unem em novo single &ldquo;CYBERPUNK&rdquo;; confira"
+              src="images/01-yannick-hara-2020-290x180.jpg"
+              width="290"
+              height="180"
+          /></a>
+        </div>
+        <div class="loop__item__description">
+          <a class="title-cat" href="rap-nacional.html">Rap Nacional</a>
+          <h2 class="title title--medium">
+            <a
+              href="vndroid-e-yannick-hara-se-unem-em-novo-single-cyberpunk-confira.html"
+              >VNDROID e Yannick Hara se unem em novo single
+              &ldquo;CYBERPUNK&rdquo;; confira</a
+            >
+          </h2>
+          <span class="byline">
+            <a class="byline__item" href="bruno-oliveira.html"
+              ><img
+                class="icon"
+                src="images/icons-user.svg"
+                alt=""
+              />Bruno Oliveira G.</a
+            ><span class="byline__item"
+              ><img
+                class="icon"
+                src="images/icons-time.svg"
+                alt=""
+              />15/01/2021</span
+            >
+            <div class="share">
+              <b class="share__title">compartilhe:</b
+              ><a
+                class="share__button"
+                href="https://www.facebook.com/sharer/sharer.php?u=https://rap24horas.com.br/2021/01/15/vndroid-e-yannick-hara-se-unem-em-novo-single-cyberpunk-confira/"
+                target="blank"
+                rel="noopener"
+                ><img
+                  class="icon"
+                  src="images/icons-share-facebook.svg"
+                  alt="Compartilhar no Facebook" /></a
+              ><a
+                class="share__button"
+                href="https://twitter.com/intent/tweet?text=VNDROID%20e%20Yannick%20Hara%20se%20unem%20em%20novo%20single%20%E2%80%9CCYBERPUNK%E2%80%9D;%20confira+https://rap24horas.com.br/2021/01/15/vndroid-e-yannick-hara-se-unem-em-novo-single-cyberpunk-confira/+via%20@rap24horasblog"
+                target="blank"
+                rel="noopener"
+                ><img
+                  class="icon"
+                  src="images/icons-share-twitter.svg"
+                  alt="Compartilhar no Twitter" /></a
+              ><a
+                class="share__button"
+                href="https://api.whatsapp.com/send?text=https://rap24horas.com.br/2021/01/15/vndroid-e-yannick-hara-se-unem-em-novo-single-cyberpunk-confira/VNDROID%20e%20Yannick%20Hara%20se%20unem%20em%20novo%20single%20%E2%80%9CCYBERPUNK%E2%80%9D;%20confira"
+                target="blank"
+                rel="noopener"
+                ><img
+                  class="icon"
+                  src="images/icons-share-whatsapp.svg"
+                  alt="Compartilhar no Whatsapp"
+              /></a></div
+          ></span>
+        </div>
+      </article>
     </div>
-  <p class="pt-4"><b>Por Segue o Fluxo</b></p>
-  <p>teste</p>
-   </div>
-<div class="">
-<div [ngStyle]="{'background-image':'url(' + publicacao.featuredImgUrl + ')'}" class="imagem-noticia"></div>
-<div [innerHTML]="publicacao.content" class="conteudo">
+  </div>-->
 
-</div>
-</div></app-latest>
+        <div class="instagram max">
+          <span class="instagram__icon"
+            ><img class="icon" src="../../assets/instagram.png" alt="Instagram"
+          /></span>
+          <h4 class="title title--medium">Sabia que estamos no Instagram?</h4>
+          <p>
+            Não perca nenhuma novidade do Segue o Fluxo. Siga-nos clicando no
+            botão abaixo!
+          </p>
+          <a class="title-cat" href="" target="_blank" rel="noopener"
+            >Seguir!</a
+          >
+          <small class="instagram__note"
+            ><span class="instagram__color">*</span> CONTEÚDOS
+            EXCLUSIVOS!</small
+          >
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+</app-latest>
+
+

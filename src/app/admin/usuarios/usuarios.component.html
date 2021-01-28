@@ -1,1 +1,53 @@
-<p>usuarios works!</p>
+<app-upload-foto style="width: 100% !important;"></app-upload-foto>
+
+
+<h2>Criar usuário (somente conta admin)</h2>
+
+<form class="container" [formGroup]="form">
+ <div class="row">
+  <label for="name">Nome: </label>
+  <input class="input-user mr-4" type="text" name="name" formControlName="name" />
+  <label for="foto">Foto link: </label>
+  <input class="input-user" type="text" name="foto" formControlName="imgUrl" />
+ </div>
+ <div class="row">
+  <label for="username">username: </label>
+  <input class="input-user mr-1" type="text" name="username" formControlName="username" />
+  <label for="password">password: </label>
+  <input class="input-user mr-1" [type]="option" name="password" formControlName="password" />
+  <button (click)="show()">Mostrar senha</button>
+ </div>
+ <div class="row">
+  <label for="email">email: </label>
+  <input type="email" name="email" formControlName="email" />
+ </div>
+ <div class="row">
+  <label for="sobre">Sobre: </label>
+  <textarea  rows="5" cols="33"  name="sobre" formControlName="about"></textarea>
+ </div>
+ <div class="row">
+  <label for="instagram">instagram link: </label>
+  <input class="input-user mr-1" type="text" name="instagram" formControlName="instagram" />
+  <label for="facebook">facebook link: </label>
+  <input class="input-user mr-1" type="text" name="facebook" formControlName="facebook" />
+  <label for="twitter">twitter link: </label>
+  <input class="input-user" type="text" name="twitter" formControlName="twitter" />
+ </div>
+
+
+ <button class="mr-3" *ngIf="editar" (click)="editarSend()"> Editar usuário </button>
+ <button *ngIf="editar" style="background-color: red !important;" (click)="cancel()"> Cancelar edição </button>
+<button *ngIf="!editar" (click)="criarUser()"> Criar usuário</button>
+
+</form>
+
+
+
+<h2  class="mt-4">Editar / Excluir</h2>
+<div style="margin-bottom: 200px" class="info-users">
+  <ul>
+    <li class="mt-3" *ngFor="let user of users">id: {{user._id}}  <b>/</b>  nome: {{user.name}}  <strong *ngIf="user.isAdmin">ADMINISTRADOR</strong>  <button *ngIf="!user.isAdmin" (click)="deletarUser(user)" style="background-color: red !important;">Deletar</button>  <button (click)="editarUser(user)"> Editar </button></li>
+  </ul>
+
+</div>
+

@@ -1,1 +1,20 @@
-<p>categorias works!</p>
+<h3> Categorias cadastradas </h3>
+<hr>
+  <ul>
+    <li *ngFor="let item of categorias" style="font-size: 20px; font-weight: bold;">{{item.description}} <button (click)="deletar(item._id)" style="height: 20px; margin-left: 20px; background-color: red;">Deletar</button></li>
+  </ul>
+
+<hr style="outline: solid 0.2px black;">
+
+
+<h3> Editar Categorias </h3>
+<hr>
+  <ul>
+    <li *ngFor="let item of categorias" style="font-size: 20px; font-weight: bold;">{{item.description}}  <input style="width: 120px; height: 30px;"(keyup)='editar($event.target.value)' type="text" ><button (click)="enviarEditar(item)" style="height: 20px; margin-left: 20px;">Editar</button></li>
+  </ul>
+
+
+  <h3> Criar nova categoria </h3>
+<hr>
+  <input style="outline: 1px solid black;" (keyup)='criar($event.target.value)' type="text" ><button (click)="enviarCriar()" >Criar</button>
+

@@ -7,10 +7,11 @@ import { CriarComponent } from './criar/criar.component';
 import { PostagensComponent } from './postagens.component';
 import { UploadFotoComponent } from '../upload-foto/upload-foto.component';
 import { EditarComponent } from './editar/editar.component';
-import { CKEditorModule } from 'ckeditor4-angular';
 import { PipeePipe } from './pipee.pipe';
+import { EditorModule } from '@tinymce/tinymce-angular';
 import { SafePipe } from './safe.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CKEditorModule } from 'ng2-ckeditor';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SafePipe],
   imports: [
     CommonModule,
+    EditorModule,
     CKEditorModule,
     ReactiveFormsModule,
     UploadFotoModule,

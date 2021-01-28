@@ -1,10 +1,14 @@
-<div style="position: fixed; top: 0; z-index: 1000000;" class="progress-container">
+<div style="position: fixed;left: 0; right: 0; top: 0; z-index: 1000000;" class="progress-container">
   <div class="progress-bar" id="scrollBar"></div>
 </div>
-
 <ngx-spinner bdColor = "rgba(0,0,0,0.55)" size = "large" color = "#ffffff" type = "pacman" [fullScreen] = "true"><p style="color: white" > Carregando.. </p></ngx-spinner>
-<div class="router-wrapper" appScollprogress>
+<div  class="router-wrapper" appScollprogress>
   <simple-notifications></simple-notifications>
-<app-header></app-header>
-<router-outlet></router-outlet>
+<app-header style="margin-top: -20 !important">
+
+<main class="main max" style="padding-top: 100px; " id="main" role="main">
+  <router-outlet></router-outlet>
+</main>
+</app-header>
+
 </div>

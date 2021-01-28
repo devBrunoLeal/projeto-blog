@@ -1,6 +1,7 @@
 import { rendererTypeName } from "@angular/compiler";
 import { THIS_EXPR } from "@angular/compiler/src/output/output_ast";
 import { Component, OnInit } from "@angular/core";
+import { Title } from "@angular/platform-browser";
 import { ActivatedRoute, Router } from "@angular/router";
 import { GlobalService } from "src/services/global.service";
 
@@ -18,10 +19,12 @@ export class PesquisasComponent implements OnInit {
   constructor(
     private active: ActivatedRoute,
     public service: GlobalService,
-    public router: Router
+    public router: Router,
+    public title: Title,
   ) {}
 
   ngOnInit() {
+    this.title.setTitle("Segue o fluxo - O melhor do funk")
     this.active.params.subscribe((res) => {
       console.log(res);
       if (res.categoria) {

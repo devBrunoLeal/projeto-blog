@@ -19,7 +19,7 @@ export class LatestComponent implements OnInit {
   constructor(private service: PostagensService, public post: GlobalService, public title: Title) { }
 
   ngOnInit() {
-  this.title.setTitle("Segue o fluxo - O melhor do funk")
+
 
   this.post.get('posts/search/em-alta/10').subscribe(res =>{
     console.log(res);

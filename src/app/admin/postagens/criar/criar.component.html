@@ -20,6 +20,20 @@
 
   <div class="form-group col">
     <label for="inputPassword" class="col-sm-2 col-form-label"
+      >Sub titulo:</label
+    >
+    <div class="col-sm-10">
+      <input
+        type="text"
+        formControlName="subTitle"
+        class="form-control"
+        placeholder="Segue o fluxo"
+      />
+    </div>
+  </div>
+
+  <div class="form-group col">
+    <label for="inputPassword" class="col-sm-2 col-form-label"
       >Foto:</label
     >
     <div class="col-sm-10">
@@ -70,10 +84,10 @@
 
 
 </div>
-
-
-
-<ckeditor (change)="onChange($event)" data="<p>Hello, world!</p>" ></ckeditor>
+<ol>
+  <li>Para IFRAME instagram colocar /embed/captioned na frente do link exemplo: <b>https://www.instagram.com/p/CKWDH6us0sF/embed/captioned</b></li>
+</ol>
+<ckeditor (change)="onChange($event)"></ckeditor>
 
 <div style="width: 100%;" class="text-center">
   <button style="width: 100px;" (click)="enviarPost()" class="btn btn-primary mt-5 justify-centent-center"> Enviar </button>

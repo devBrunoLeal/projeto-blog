@@ -1,0 +1,18 @@
+.input-user{
+  width: auto;
+}
+
+.row{
+margin-top: 20px;
+}
+
+.info-users button{
+  height: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.info-users strong {
+  font-weight: bold;
+  font-size: 20px;
+}

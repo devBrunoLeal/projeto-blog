@@ -18,6 +18,7 @@ export class GlobalService  {
    public api = "http://localhost:3333/api/v1/"
    public apii = "https://dummyapi.io/data/api/"
    public token = localStorage.getItem('token-segueofluxo');
+   public token_id = localStorage.getItem('user')
 
 
    public headers: HttpHeaders = new HttpHeaders()
@@ -25,6 +26,7 @@ export class GlobalService  {
       .set('Accept', 'application/json')
       .set('Cache-Control', 'no-cache')
       .append('x-access-token', this.token)
+      .append('user-id', this.token_id)
 
 
       public headers2: HttpHeaders = new HttpHeaders()

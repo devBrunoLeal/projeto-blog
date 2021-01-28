@@ -1,3 +1,4 @@
+import { UploadFotoModule } from './upload-foto/upload-foto.module';
 import { PostagensModule } from './postagens/postagens.module';
 import { AuthGuard } from 'src/guards/auth.guard';
 import { UsuariosComponent } from './usuarios/usuarios.component';
@@ -14,13 +15,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field'
 import {MatIconModule} from '@angular/material/icon';
-import { FileUploadModule } from 'ng2-file-upload';
-import { NgxFileDropModule } from 'ngx-file-drop';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { CriarComponent } from './postagens/criar/criar.component';
-import { EditarComponent } from './postagens/editar/editar.component';
-import { DeletarComponent } from './postagens/deletar/deletar.component';
-import { EditarDestaqueComponent } from './postagens/editar-destaque/editar-destaque.component';
 
 @NgModule({
   declarations: [LoginComponent,CategoriasComponent,UsuariosComponent],
@@ -30,6 +25,7 @@ import { EditarDestaqueComponent } from './postagens/editar-destaque/editar-dest
     HttpClientModule,
     MatCardModule,
     PostagensModule,
+    UploadFotoModule,
     MatIconModule,
     MatFormFieldModule,
     MatButtonModule,

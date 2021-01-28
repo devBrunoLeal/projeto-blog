@@ -40,18 +40,21 @@ export class LoginComponent implements OnInit {
             timeOut: 3000,
             showProgressBar: true,
           });
+
+
           console.log(res);
           localStorage.setItem("token-segueofluxo", res.token);
           localStorage.setItem("user", res.idUser);
 
-          setTimeout(() => {
+
             this.spinner.hide();
             this.router.navigateByUrl("/admin/postagens");
-          }, 1000);
+            setTimeout(function(){location.reload()},500)
         },
         (err) => {
           console.log(err);
           this.click = 0;
+          this.spinner.hide();
           this.noti.error(
             "Error",
             "Falha ao fazer login, verifique os campos",

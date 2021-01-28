@@ -1,49 +1,53 @@
-<div class="container">
-  <div class="principal row">
-    <div class="row">
-      <div *ngFor="let destaque of destaques; let i = index" class="destaques">
-        <div *ngIf="i == 0" class="principal-conteudo" [routerLink]="['/publicacao/'+destaques[0].idTitle]" [ngStyle]="{'background-image':'url(' + destaques[0].featuredImgUrl + ')'}">
-          <div class="textos-principal">
-            <div class="categoria">
-              <p>{{destaque.category}}</p>
-            </div>
-            <div class="titulo">
-              <p>
-                {{destaque.title}}
-              </p>
-            </div>
-          </div>
-        </div>
-        <div *ngIf="i == 1" class="principal-secundario" [routerLink]="['/publicacao/'+destaques[1].idTitle]" [ngStyle]="{'background-image':'url(' + destaques[1].featuredImgUrl + ')'}">
-          <div  class="textos-secundario">
-            <div class="categoria">
-              <p>{{destaque.category}}</p>
-            </div>
-            <div style="width: 270px;" class="titulo-secundario">
-              <p>
-                {{destaque.title}}
-              </p>
-            </div>
-          </div>
-        </div>
-        <div *ngIf="i == 2" class="principal-secundario" [routerLink]="['/publicacao/'+destaques[2].idTitle]" [ngStyle]="{'background-image':'url(' + destaques[2].featuredImgUrl + ')'}">
-          <div class="textos-secundario">
-            <div class="categoria">
-              <p>{{destaque.category}}</p>
-            </div>
-            <div style="width: 270px;" class="titulo-secundario">
-              <p >
-                {{destaque.title}}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+<!--<carousel class="col" style="display: inline-block;z-index: 1 !important;" [width]='640' [cellWidth]='640' [height]="420" *ngIf="destaquesCarousel.length > 1">
+  <div style="width: 270px;" *ngFor="let destaque of destaquesCarousel; let i = index" class="carousel-cell">
+    <article
+    class="featured__item"
+    [ngStyle]="{'background-image':'url(' + destaque.featuredImgUrl + ')'}"
+    role="article"
+  >
+    <div class="featured__item__description">
+      <a class="title-cat" href="">{{destaque.category}}</a>
+      <h2 class="featured__item__title title">
+        <a
+          class="featured__item__link"
+          href=""
+          [routerLink]="['/publicacao/'+destaque.idTitle]"
+          >{{destaque.title}}</a
+        >
+      </h2>
     </div>
+  </article>
   </div>
-</div>
+</carousel> -->
+
+<section style="max-width: 1120px;max-heigth:480px !important; margin: auto;" class="featured max">
+  <article *ngFor="let destaque of destaques; let i = index"
+    class="featured__item"
+    [ngStyle]="{'background-image':'url(' + destaque.featuredImgUrl + ')'}"
+    role="article"
+  >
+    <div class="featured__item__description">
+      <a class="title-cat" href="">{{destaque.category}}</a>
+      <h2 class="featured__item__title title">
+        <a
+          class="featured__item__link"
+          href=""
+          [routerLink]="['/publicacao/'+destaque.idTitle]"
+          >{{destaque.title}}</a
+        >
+      </h2>
+    </div>
+  </article>
+</section>
+
 <div *ngIf="noticias">
-  <app-latest  [show]='true'><app-posts [p]="page+1"  (pageSaida)="callNumber($event)" [num]='num' [noticias]="noticias"></app-posts></app-latest>
+  <app-latest [show]="true"
+    ><app-posts
+      [p]="page + 1"
+      (pageSaida)="callNumber($event)"
+      [num]="num"
+      [noticias]="noticias"
+    ></app-posts
+  ></app-latest>
 </div>
 

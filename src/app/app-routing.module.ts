@@ -5,13 +5,23 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from 'src/guards/auth.guard';
 import { DestaqueComponent } from './destaque/destaque.component';
 import { PublicacaoComponent } from './publicacao/publicacao.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { PesquisasComponent } from './pesquisas/pesquisas.component';
+import { SobreComponent } from './sobre/sobre.component';
+import { ContatoComponent } from './contato/contato.component';
 const routes: Routes = [
   {
     path: "",
     component: DestaqueComponent
+  },
+  {
+    path: "sobre",
+    component: SobreComponent
+  },
+  {
+    path: "contato",
+    component: ContatoComponent
   },
   {
     path: "page/:numero",
@@ -54,7 +64,8 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes),
   CommonModule,
   HttpClientModule,
+  BrowserAnimationsModule,
   ],
-  exports: [RouterModule]
+  exports: [RouterModule,BrowserAnimationsModule]
 })
 export class AppRoutingModule { }
