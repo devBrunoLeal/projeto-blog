@@ -1,3 +1,4 @@
+import { NotificationsService } from 'angular2-notifications';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Component, OnInit, Pipe } from "@angular/core";
 import { DomSanitizer } from "@angular/platform-browser";
@@ -23,7 +24,7 @@ export class CriarComponent implements OnInit {
     featuredImgUrl: new FormControl("", Validators.required),
   });
 
-  constructor(public service: GlobalService) {}
+  constructor(public service: GlobalService,public notify: NotificationsService) {}
 
   ngOnInit() {
     this.service.get("categories").subscribe((res) => {
@@ -71,6 +72,9 @@ export class CriarComponent implements OnInit {
 
      this.service.post('posts', post).subscribe(res => {
        console.log(res);
+       this.notify.success('Postado,','Postagem criada com sucesso!')
+     },(err) => {
+      this.notify.error('Error','Erro ao fazer postagem')
      })
   }
 }

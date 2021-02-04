@@ -29,7 +29,7 @@
         <li>
           <a
             class="widget__social__facebook"
-            href=""
+            href="https://www.facebook.com/segueofluxooriginal"
             target="_blank"
             rel="noopener"
             ><img
@@ -42,7 +42,7 @@
         <li>
           <a
             class="widget__social__instagram"
-            href=""
+            href="https://www.instagram.com/segueofluxooriginal/"
             target="_blank"
             rel="noopener"
             ><img
@@ -54,7 +54,7 @@
         <li>
           <a
             class="widget__social__twitter"
-            href=""
+            href="https://twitter.com/segueofluxonews"
             target="_blank"
             rel="noopener"
             ><img
@@ -73,7 +73,7 @@
     <div id="lt_featured_posts_widget-5" class="widget widget--posts">
       <h4 class="title title--smaller title--upper">Em Alta</h4>
       <ul class="widget__posts">
-        <li *ngIf="alta[0]"  [routerLink]="['/publicacao/'+alta[0].idTitle]" [ngStyle]="{'background-image':'url(' + alta[0].featuredImgUrl + ')'}"
+        <li *ngIf="alta[0]"  [ngStyle]="{'background-image':'url(' + alta[0].featuredImgUrl + ')'}"
           class="widget__posts__item"
         >
           <div class="widget__posts__item__description">
@@ -82,7 +82,7 @@
             >
             <a
               class="widget__posts__item__title"
-              href="mae-do-juice-wrld-faz-desabafo-sobre-morte-do-rapper-meu-maior-medo-era-ele-tivesse-uma-overdose.html"
+              [routerLink]="['/publicacao/'+alta[0].idTitle]"
               >{{alta[0].title}}</a
             >
           </div>

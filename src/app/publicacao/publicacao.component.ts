@@ -26,11 +26,11 @@ export class PublicacaoComponent implements OnInit {
   public publicacao;
   public user;
   public scriptLoaded = false;
-
+  public linkAtual;
   ngDoCheck() {}
 
   ngOnInit() {
-
+   this.linkAtual = location.href;
 
     let value;
     window.addEventListener("scroll", function () {
@@ -48,7 +48,7 @@ export class PublicacaoComponent implements OnInit {
       console.log(res);
       this.service.get("posts/" + res.id).subscribe((res) => {
         console.log(res);
-
+        this.linkAtual = location.href;
         this.publicacao = res;
 
         this.titleService.setTitle(res.title);

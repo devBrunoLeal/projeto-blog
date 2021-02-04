@@ -27,7 +27,7 @@
     role="article"
   >
     <div class="featured__item__description">
-      <a class="title-cat" href="">{{destaque.category}}</a>
+      <a class="title-cat"  [routerLink]="['/categoria/'+destaque.category]">{{destaque.category}}</a>
       <h2 class="featured__item__title title">
         <a
           class="featured__item__link"

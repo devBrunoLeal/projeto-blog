@@ -4,35 +4,34 @@
     <div class="wrapper">
       <section style="width: 100%" class="content-area col-content">
         <header class="heading max">
-          <a class="title-cat" href="">{{ publicacao.category }}</a>
+          <a class="title-cat"  [routerLink]="['/categoria/'+publicacao.category]">{{ publicacao.category }}</a>
           <h1 class="title title--big">
             {{ publicacao.title }}
           </h1>
-          <div class="sub-titulo">
-            <p class="sub-titulo">{{ publicacao.title }}</p>
+          <div *ngIf="publicacao.subTitle" class="sub-titulo">
+            <p class="sub-titulo">{{ publicacao.subTitle }}</p>
           </div>
           <hr />
           <span class="byline">
-            <a class="byline__item" href=""
+            <a class="byline__item" [routerLink]="['/usuario/'+user.id]"
               ><img class="icon" [src]="user.imgUrl" alt="" />{{ user.name }}</a
             ><span class="byline__item"
-              ><img class="icon" src="images/icons-time.svg" alt="" />{{
-                publicacao.published
-              }}</span
+              ><img class="icon" style="max-width: 9px;
+              padding-bottom: 4px;" src="../../assets/timer-svgrepo-com (1).svg" alt="" />{{publicacao.published | date: ('MM/dd/yyy') }}</span
             >
             <div class="share">
               <b class="share__title">compartilhe:</b
-              ><a class="share__button" href="" target="blank" rel="noopener"
+              ><a class="share__button" [href]="'https://www.facebook.com/sharer/sharer.php?u='+linkAtual" target="blank" rel="noopener"
                 ><img
                   class="icon"
                   src="../../assets/facebook.png"
                   alt="Compartilhar no Facebook" /></a
-              ><a class="share__button" href="" target="blank" rel="noopener"
+              ><a class="share__button" [href]="'https://twitter.com/intent/tweet?url='+linkAtual" target="blank" rel="noopener"
                 ><img
                   class="icon"
                   src="../../assets/twitter.png"
                   alt="Compartilhar no Twitter" /></a
-              ><a class="share__button" href="" target="blank" rel="noopener"
+              ><a class="share__button" [href]="'https://api.whatsapp.com/send?text='+linkAtual" target="blank" rel="noopener"
                 ><img
                   class="icon"
                   src="../../assets/wp.png"
@@ -61,25 +60,25 @@
           </div>
         </article>
         <footer class="content-area__footer max">
-          <ul class="content-area__tags">
-            <li>
+          <!-- <ul class="content-area__tags">
+          <li>
               <a href="lancamentos.html" rel="tag">Lançamentos</a>
             </li>
-          </ul>
+          </ul>-->
           <div class="share">
             <b class="share__title">compartilhe:</b
-            ><a class="share__button" href="" target="blank" rel="noopener"
+            ><a class="share__button" [href]="'https://www.facebook.com/sharer/sharer.php?u='+linkAtual" target="blank" rel="noopener"
               ><img
                 class="icon"
                 src="../../assets/facebook.png"
 
                 alt="Compartilhar no Facebook" /></a
-            ><a class="share__button" href="" target="blank" rel="noopener"
+            ><a class="share__button" [href]="'https://twitter.com/intent/tweet?url='+linkAtual" target="blank" rel="noopener"
               ><img
                 class="icon"
                 src="../../assets/twitter.png"
                 alt="Compartilhar no Twitter" /></a
-            ><a class="share__button" href="" target="blank" rel="noopener"
+            ><a class="share__button" [href]="'https://api.whatsapp.com/send?text='+linkAtual" target="blank" rel="noopener"
               ><img
                 class="icon"
                 src="../../assets/wp.png"
@@ -97,22 +96,22 @@
             /></span>
             <div class="author__bio">
               <b class="title title--smaller"
-                ><a href="" rel="author">{{ user.name }}</a></b
+                ><a [routerLink]="['/usuario/'+user.id]" rel="author">{{ user.name }}</a></b
               >
               {{ user.about }}
               <ul class="author__social">
                 <li>
-                  <a href="" target="_blank" rel="noopener nofollow"
+                  <a [href]="user.facebook" target="_blank" rel="noopener nofollow"
                     ><img src="../../assets/facebook.png" alt="Facebook"
                   /></a>
                 </li>
                 <li>
-                  <a href="" target="_blank" rel="noopener nofollow"
+                  <a [href]="user.twitter" target="_blank" rel="noopener nofollow"
                     ><img src="../../assets/twitter.png" alt="Twitter"
                   /></a>
                 </li>
                 <li>
-                  <a href="" target="_blank" rel="noopener nofollow"
+                  <a [href]="user.instagram" target="_blank" rel="noopener nofollow"
                     ><img src="../../assets/instagram.png" alt="Instagram"
                   /></a>
                 </li>
@@ -213,7 +212,7 @@
             Não perca nenhuma novidade do Segue o Fluxo. Siga-nos clicando no
             botão abaixo!
           </p>
-          <a class="title-cat" href="" target="_blank" rel="noopener"
+          <a class="title-cat" href="https://www.instagram.com/segueofluxooriginal/" target="_blank" rel="noopener"
             >Seguir!</a
           >
           <small class="instagram__note"
