@@ -42,7 +42,6 @@ export class PublicacaoComponent implements OnInit {
     this.valuee = value;
     console.log(this.valuee);
     let id = this.active.snapshot.paramMap.get("id");
-   Meta.name('fsa')
     console.log(id);
 
     this.active.params.subscribe((res) => {
