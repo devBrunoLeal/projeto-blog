@@ -51,9 +51,10 @@ export class PublicacaoComponent implements OnInit {
         this.linkAtual = location.href;
         this.publicacao = res;
 
-        this.meta.addTag({name: 'og:title', content: res.title})
-        this.meta.addTag({name: 'og:description', content: res.subTitle})
-        this.meta.addTag({name: 'og:image', content: res.featuredImgUrl})
+        this.meta.updateTag({name: 'og:title', content: res.title})
+        this.meta.updateTag({name: 'og:description', content: res.subTitle})
+        this.meta.updateTag({name: 'og:image', content: res.featuredImgUrl})
+        this.meta.updateTag({name: 'og:image:secure_url',itemprop:"image", content: res.featuredImgUrl})
 
         this.titleService.setTitle(res.title);
         this.getUser(res.user);
