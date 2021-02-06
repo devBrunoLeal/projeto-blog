@@ -15,7 +15,7 @@ export class PostagensService  {
 
 
 
-   public api = "http://192.168.0.104:3333/"
+   public api = "http://segueofluxo-com.umbler.net/"
    public apii = "https://dummyapi.io/data/api/"
    public headers: HttpHeaders = new HttpHeaders()
       .set('content-type', 'application/json')
