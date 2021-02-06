@@ -1,7 +1,8 @@
-<meta property="og:title" content="{{publicacao.title}}" />
+
+<app-latest *ngIf="publicacao && user">
+  <meta property="og:title" content="{{publicacao.title}}" />
 <meta property="og:description" content="{{publicacao.subTitle}}" />
 <meta property="og:image" content="{{publicacao.featuredImgUrl}}" />
-<app-latest *ngIf="publicacao && user">
   <main class="main max" id="main" role="main">
     <div class="wrapper">
       <section style="width: 100%" class="content-area col-content">
