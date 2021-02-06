@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit } from "@angular/core";
-import { SafeResourceUrl, Title } from "@angular/platform-browser";
+import { Meta, SafeResourceUrl, Title } from "@angular/platform-browser";
 import { ActivatedRoute, Params } from "@angular/router";
 import { GlobalService } from "src/services/global.service";
 import { PostagensService } from "src/services/postagens.service";
@@ -17,7 +17,8 @@ export class PublicacaoComponent implements OnInit {
     private service: GlobalService,
     public titleService: Title,
     private elRef: ElementRef,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private meta: Meta,
   ) {}
   public link = "https://zyra.github.io/ngx-facebook/comments/";
   public id;
@@ -41,7 +42,7 @@ export class PublicacaoComponent implements OnInit {
     this.valuee = value;
     console.log(this.valuee);
     let id = this.active.snapshot.paramMap.get("id");
-
+   Meta.name('fsa')
     console.log(id);
 
     this.active.params.subscribe((res) => {
@@ -50,6 +51,10 @@ export class PublicacaoComponent implements OnInit {
         console.log(res);
         this.linkAtual = location.href;
         this.publicacao = res;
+
+        this.meta.updateTag({name: 'og:title', content: res.title})
+        this.meta.updateTag({name: 'og:description', content: res.subTitle})
+        this.meta.updateTag({name: 'og:image', content: res.featuredImgUrl})
 
         this.titleService.setTitle(res.title);
         this.getUser(res.user);
