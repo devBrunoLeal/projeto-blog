@@ -15,7 +15,7 @@ export class GlobalService  {
 
 
 
-   public api = "http://segueofluxo-com.umbler.net/"
+   public api = "https://segueofluxo-com.umbler.net/"
    public apii = "https://dummyapi.io/data/api/"
    public token = localStorage.getItem('token-segueofluxo');
    public token_id = localStorage.getItem('user')
