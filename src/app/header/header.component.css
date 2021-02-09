@@ -41,7 +41,7 @@ outline: thin dotted;
 }
 
 ::ng-deep .mat-list-item-content{
-  
+
 }
 mat-sidenav{
       height: 400px;
@@ -67,3 +67,6 @@ mat-toolbar-row a{
 }
 
 
+::ng-deep .header-bar a:hover{
+  color: black !important;
+}

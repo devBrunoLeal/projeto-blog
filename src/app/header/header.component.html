@@ -1,5 +1,5 @@
 <div style="height: 100%;">
-  <mat-toolbar style="position: fixed; left: 0; right: 0; top: 4px; z-index: 100;" color="primary">
+  <mat-toolbar class="header-bar"  style="position: fixed; left: 0; right: 0; top: 4px; z-index: 100;" color="primary">
     <mat-toolbar-row style="max-width: 1120px; margin: auto; position:relative">
       <button *ngIf="showMenu" style="position: absolute; right: 40px;" mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
         <mat-icon>menu</mat-icon>
@@ -25,7 +25,7 @@
 
   <mat-sidenav-container fxFlexFill>
     <mat-sidenav #sidenav>
-      <mat-nav-list>
+      <mat-nav-list class="header-bar" >
         <a (click)="sidenav.toggle()" href="" mat-list-item>Fechar</a>
         <a href="#" mat-list-item routerLink="/sobre">Sobre</a>
         <a href="#" mat-list-item routerLink="/contato">Contato</a>

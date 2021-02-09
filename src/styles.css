@@ -1,8 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+
 
 body {
   padding-top: 8px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Times New RomanArial, Helvetica !important;
   margin: auto !important;
   background-image: url('../src/assets/test.png') !important;
   background-size: 300px !important;
@@ -10,6 +10,23 @@ body {
 .categoria {
   font-weight: bold;
   cursor: pointer;
+}
+
+.thumb{
+  transition: border 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.featured__item{
+  border-radius: 17px;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.featured__item:hover{
+  transform: translateY(-10px);
+}
+
+.thumb:hover{
+  transform: translatex(-4px);
 }
 
 ::ng-deep iframe #u_0_0{
@@ -2470,7 +2487,7 @@ a {
 }
 a:active,
 a:hover {
-  color: rgba(200, 1, 1, 0.7);
+  color: #1e4fbd;
   outline-width: 0;
 }
 ul,
@@ -3403,16 +3420,16 @@ button:disabled,
   color: #1647b5;
 }
 .content-area .instagram .title-cat {
-  background-color: #010101;
-  color: #fff;
+  background-color: #2152c1;
+  color: #fafafa;
   padding-bottom: 4px;
   padding-top: 6px;
   font-size: 1rem;
   line-height: 1.33333rem;
 }
 .content-area .instagram .title-cat:hover {
-  background: #f1f1f1;
-  color: #010101;
+  background: #fafafa;
+  color: #2152c1;
 }
 .pagination {
   border-bottom: 1px solid #eee;
@@ -4821,10 +4838,13 @@ img.emoji {
 .title__color {
   color: #1647b5;
 }
+
+
+
 .title-cat,
 .content-area__tags a {
-  background: #f1f1f1;
-  color: #010101;
+  background: #2152c1;
+  color: #FFF;
   display: inline-block;
   font-family: "poppinssemibold";
   letter-spacing: 0.5px;
@@ -4835,8 +4855,8 @@ img.emoji {
 }
 .title-cat:hover,
 .content-area__tags a:hover {
-  background-color: #010101;
-  color: #fff;
+  background-color: #FFF;
+  color: #2152c1;
 }
 .content-area .title-cat,
 .content-area .content-area__tags a {
