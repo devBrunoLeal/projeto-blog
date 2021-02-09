@@ -1,1 +1,9 @@
 
+::ng-deep .ngx-pagination{
+  font-weight: bold !important;
+}
+
+::ng-deep .ngx-pagination .current{
+  background: #1e4fbd !important;
+  border-radius: 50% !important;
+}
