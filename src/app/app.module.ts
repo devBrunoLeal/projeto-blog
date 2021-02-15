@@ -3,6 +3,7 @@ import { SafePipe } from "./../app/publicacao/safe.pipe";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule,LOCALE_ID } from "@angular/core";
 
+import { MetaModule } from 'ng2-meta';
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
@@ -79,6 +80,7 @@ registerLocaleData(localePT, 'pt', localeExtraPT);
   imports: [
     BrowserModule,
     FacebookModule.forRoot(),
+    MetaModule.forRoot(),
     HttpClientModule,
     MatToolbarModule,
     MatSidenavModule,

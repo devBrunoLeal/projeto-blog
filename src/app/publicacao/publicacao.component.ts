@@ -4,6 +4,7 @@ import { ActivatedRoute, Params } from "@angular/router";
 import { GlobalService } from "src/services/global.service";
 import { PostagensService } from "src/services/postagens.service";
 import { DomSanitizer } from "@angular/platform-browser";
+import { MetaService } from "ng2-meta";
 @Component({
   selector: "app-publicacao",
   templateUrl: "./publicacao.component.html",
@@ -19,6 +20,7 @@ export class PublicacaoComponent implements OnInit {
     private elRef: ElementRef,
     private sanitizer: DomSanitizer,
     private meta: Meta,
+    private metaService: MetaService
   ) {}
   public link = "https://zyra.github.io/ngx-facebook/comments/";
   public id;
@@ -50,11 +52,11 @@ export class PublicacaoComponent implements OnInit {
         console.log(res);
         this.linkAtual = location.href;
         this.publicacao = res;
-
-        this.meta.updateTag({name: 'og:title', content: res.title})
-        this.meta.updateTag({name: 'og:description', content: res.subTitle})
-        this.meta.updateTag({name: 'og:image', content: res.featuredImgUrl})
-        this.meta.updateTag({name: 'og:image:secure_url',itemprop:"image", content: res.featuredImgUrl})
+        this.metaService.setTitle('Product page for '+res.title);
+        this.metaService.setTag('og:image',res.featuredImgUrl);
+        this.metaService.setTag('og:image:secure_url',res.featuredImgUrl)
+        this.metaService.setTag('og:title',res.title);
+        this.metaService.setTag('og:description',res.subTitle);
 
         this.titleService.setTitle(res.title);
         this.getUser(res.user);
