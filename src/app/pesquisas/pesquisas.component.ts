@@ -24,7 +24,7 @@ export class PesquisasComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.title.setTitle("Segue o fluxo - O melhor do funk")
+    this.title.setTitle("Segue o Fluxo - Um dos maiores portal de noticias sobre Funk.")
     this.active.params.subscribe((res) => {
       // console.log(res);
       if (res.categoria) {

@@ -3,6 +3,9 @@
    margin-left: 120px;
    padding-top: 10px !important;
 }
+a{
+  font-family: 'Sabado';
+}
 .navbar{
   position: fixed;
   top: 0;

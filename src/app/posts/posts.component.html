@@ -36,5 +36,5 @@
   <li style="display: none;" *ngFor="let item of collection | paginate: { itemsPerPage: 10, currentPage: p }">{{ item }}</li>
 </ul>
 <hr>
-<pagination-controls maxSize="10" style="margin: auto;" previousLabel="Anterior" nextLabel="Próximo" (pageChange)="pageChanged($event)"></pagination-controls>
+<pagination-controls maxSize="10" style="display: flex; justify-content: center; margin: auto;" previousLabel="Anterior" nextLabel="Próximo" (pageChange)="pageChanged($event)"></pagination-controls>
 <hr style="margin-bottom: 100px">

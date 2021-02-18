@@ -50,7 +50,7 @@ export class DestaqueComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.title.setTitle("Segue o fluxo - O melhor do funk")
+    this.title.setTitle("Segue o Fluxo - Um dos maiores portal de noticias sobre Funk.")
     this.customOptions = {
       loop: false,
       mouseDrag: false,
