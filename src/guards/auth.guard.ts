@@ -17,7 +17,7 @@ export class AuthGuard implements CanActivate {
 
        this.service.postVazio('users/canactive',{}).subscribe(res =>{
          if(res.canActive){
-           console.log('sucess');
+           // console.log('sucess');
          }else{
            localStorage.removeItem('token-segueofluxo');
            this.router.navigateByUrl('/login')

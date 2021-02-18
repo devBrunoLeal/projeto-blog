@@ -42,14 +42,14 @@ export class PublicacaoComponent implements OnInit {
       let facebook = window.document.body.querySelector(".fb-comments");
     });
     this.valuee = value;
-    console.log(this.valuee);
+    // console.log(this.valuee);
     let id = this.active.snapshot.paramMap.get("id");
-    console.log(id);
+    // console.log(id);
 
     this.active.params.subscribe((res) => {
-      console.log(res);
+      // console.log(res);
       this.service.get("posts/" + res.id).subscribe((res) => {
-        console.log(res);
+        // console.log(res);
         this.linkAtual = location.href;
         this.publicacao = res;
         this.metaService.setTitle('Product page for '+res.title);
@@ -66,7 +66,7 @@ export class PublicacaoComponent implements OnInit {
     });
   }
   cleanURL(oldURL: string): SafeResourceUrl {
-    console.log(oldURL);
+    // console.log(oldURL);
     return "FSA";
   }
 
@@ -75,28 +75,28 @@ export class PublicacaoComponent implements OnInit {
       this.url = this.sanitizer.bypassSecurityTrustResourceUrl(
         "https://www.facebook.com/v9.0/plugins/comments.php?app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df1fcb71c752e274%26domain%3Dlocffalhost%26origin%3Dhttp%253A%252F%252Flocalhfffost%253A4200%252Ff23b581561219e4%26relation%3Dparent.parent&amp;container_width=967&amp;height=50&amp;href=http://localhost:4202/publicacao/%2F&amp;locale=pt_BR&amp;numposts=3&amp;sdk=joey&amp;version=v9.0&amp;width=550"
       );
-      console.log(this.url);
+      // console.log(this.url);
       document.getElementById("frame_idd").innerHTML =
         '<iframe name="f34b0dcef3b8178" class="iframe-facebook"  data-testid="fb:comments Facebook Social Plugin" title="fb:comments Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true"  *ngIf="publicacao" id="frame_id" allow="encrypted-media" src="https://www.facebook.com/v9.0/plugins/comments.php?app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df1fcb71c752e274%26domain%3Dlocffalhost%26origin%3Dhttp%253A%252F%252Flocalhfffost%253A4200%252Ff23b581561219e4%26relation%3Dparent.parent&amp;container_width=967&amp;height=50&amp;href=http://localhost:4202/publicacao/' +
         this.publicacao.idTitle +
         '%2F&amp;locale=pt_BR&amp;numposts=3&amp;sdk=joey&amp;version=v9.0&amp;width=100%" style="border: none; visibility: visible; width: 100%; height: 550px; display:block;" class=""></iframe>';
-      console.log("teste");
+      // console.log("teste");
     }, 1000);
-    console.log("preparing to load...");
+    // console.log("preparing to load...");
     let node = document.createElement("script");
     node.src = this.url;
     node.async = true;
-    console.log(node);
+    // console.log(node);
     document.querySelector("body").append(node);
 
-    console.log("preparing to load...");
+    // console.log("preparing to load...");
     let face = document.createElement("script");
     face.src = "https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v9.0";
     face.async = true;
     face.defer = true;
     face.crossOrigin = "anonymous";
     face.nonce = "IrsBZw6Y";
-    console.log(node);
+    // console.log(node);
     document.querySelector("body").append(face);
     this.scriptLoaded = true;
     setTimeout(() => {}, 500);
@@ -116,14 +116,14 @@ export class PublicacaoComponent implements OnInit {
 
       let documentFrame = facebookIframe.contentWindow.document.querySelector('_2pi8');
       if(documentFrame){
-        console.log(documentFrame);
+        // console.log(documentFrame);
       }
 
-      console.log(documentFrame);
+      // console.log(documentFrame);
 
       if (isIFrame(facebookIframe) && facebookIframe.contentWindow) {
        let face = facebookIframe.contentWindow.document;
-       console.log(face);
+       // console.log(face);
       }
 
     }, 500);
@@ -141,13 +141,13 @@ export class PublicacaoComponent implements OnInit {
     face.allowFullscreen = true;
     face.allow = "encrypted-media";
     face.nonce = "IrsBZw6Y";
-    console.log(face);
+    // console.log(face);
     document.querySelector("body").append(face);
   }
 
   getUser(user) {
     this.service.get("users/about/" + user).subscribe((res) => {
-      console.log(res);
+      // console.log(res);
       this.user = res;
     });
   }

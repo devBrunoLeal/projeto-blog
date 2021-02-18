@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 
     if (this.click == 1) {
       this.spinner.show();
-      console.log(this.form.value);
+      // console.log(this.form.value);
       this.service.post("users/login", this.form.value).subscribe(
         (res) => {
 
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
           });
 
 
-          console.log(res);
+          // console.log(res);
           localStorage.setItem("token-segueofluxo", res.token);
           localStorage.setItem("user", res.idUser);
 
@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
             setTimeout(function(){location.reload()},500)
         },
         (err) => {
-          console.log(err);
+          // console.log(err);
           this.click = 0;
           this.spinner.hide();
           this.noti.error(

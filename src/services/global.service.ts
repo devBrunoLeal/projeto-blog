@@ -77,7 +77,7 @@ export class GlobalService  {
   public uploadImagem(file) {
 
 
-   console.log(file)
+   // console.log(file)
     const httpOptions = {
       headers: new HttpHeaders({
         'Accept': 'application/json',

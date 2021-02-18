@@ -26,7 +26,7 @@ export class EditarDestaqueComponent implements OnInit {
     this.service.get("posts/search/features/5").subscribe(
       (res) => {
         this.spinner.hide();
-        console.log(res);
+        // console.log(res);
         this.publicacao = res;
       },
       (err) => {
@@ -36,13 +36,13 @@ export class EditarDestaqueComponent implements OnInit {
   }
 
   editarPost(e) {
-    console.log(e);
+    // console.log(e);
     e.situation.featured = false;
     e.situation.position = 0;
     this.service.put("posts/"+e._id, e).subscribe(
       (res) => {
         this.spinner.hide();
-        console.log(res);
+        // console.log(res);
         this.getPubli();
         this.notify.success('Retirado dos destaques com sucesso.', e.title);
       },
@@ -54,6 +54,6 @@ export class EditarDestaqueComponent implements OnInit {
   }
 
   buscarPublicacao() {
-    console.log(this.form.get("title").value);
+    // console.log(this.form.get("title").value);
   }
 }

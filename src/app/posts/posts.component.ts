@@ -17,7 +17,7 @@ export class PostsComponent implements OnInit {
   constructor(public post: GlobalService) { }
 
   ngOnInit() {
-    console.log(this.num);
+    // console.log(this.num);
  for (let i = 1; i <= this.num; i++) {
       this.collection.push(`item ${i}`);
     }

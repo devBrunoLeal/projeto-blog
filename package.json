@@ -25,6 +25,7 @@
     "@angular/router": "~8.2.14",
     "@ckeditor/ckeditor5-angular": "^2.0.1",
     "@ckeditor/ckeditor5-build-classic": "^24.0.0",
+    "@nguniversal/express-engine": "^8.2.6",
     "@tinymce/tinymce-angular": "^3.0.0",
     "angular-material-fileupload": "^3.0.1",
     "angular-responsive-carousel": "^2.0.2",

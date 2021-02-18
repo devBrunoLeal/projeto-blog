@@ -26,7 +26,7 @@ export class PesquisasComponent implements OnInit {
   ngOnInit() {
     this.title.setTitle("Segue o fluxo - O melhor do funk")
     this.active.params.subscribe((res) => {
-      console.log(res);
+      // console.log(res);
       if (res.categoria) {
         this.tipo = "categoria";
         this.titulo = res.categoria;
@@ -35,7 +35,7 @@ export class PesquisasComponent implements OnInit {
           .get("posts/pages/number/category/" + res.categoria)
           .subscribe((res) => {
             this.num = res;
-            console.log(this.num);
+            // console.log(this.num);
             this.callCategoria(this.titulo, this.pagina);
           });
       }
@@ -47,7 +47,7 @@ export class PesquisasComponent implements OnInit {
           .get("posts/pages/number/user/" + res.user)
           .subscribe((res) => {
             this.num = res;
-            console.log(this.num);
+            // console.log(this.num);
             this.callUser(this.titulo, this.pagina);
           });
       }
@@ -59,7 +59,7 @@ export class PesquisasComponent implements OnInit {
           .get("posts/pages/number/search/" + res.search)
           .subscribe((res) => {
             this.num = res;
-            console.log(this.num);
+            // console.log(this.num);
             this.callSearch(this.titulo, this.pagina);
           });
       }
@@ -72,14 +72,14 @@ export class PesquisasComponent implements OnInit {
       .getPagination("posts/category/" + text, page)
       .subscribe((res) => {
         this.resultado = res;
-        console.log(res);
+        // console.log(res);
       });
   }
 
   callUser(text, page) {
     this.service.getPagination("posts/user/" + text, page).subscribe((res) => {
       this.resultado = res;
-      console.log(res);
+      // console.log(res);
     });
   }
 
@@ -88,7 +88,7 @@ export class PesquisasComponent implements OnInit {
       .getPagination("posts/search/" + text, page)
       .subscribe((res) => {
         this.resultado = res;
-        console.log(res);
+        // console.log(res);
       });
   }
 

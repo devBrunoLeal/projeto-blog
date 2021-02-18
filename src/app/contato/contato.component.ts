@@ -12,7 +12,7 @@ export class ContatoComponent implements OnInit {
 
   ngOnInit() {
     this.service.getPagination("posts", 0).subscribe((res) => {
-      console.log(res);
+      // console.log(res);
       this.noticias = res;
     });
   }

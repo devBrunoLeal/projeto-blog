@@ -35,15 +35,15 @@ export class UploadFotoComponent implements OnInit {
 
           const formData: FormData = new FormData();
 
-          console.log(droppedFile.fileEntry)
+          // console.log(droppedFile.fileEntry)
           formData.append('files',file,droppedFile.relativePath)
 
           this.service.uploadImagem(formData).subscribe(res => {
-            console.log(res);
+            // console.log(res);
             this.spinner.hide();
             this.notifications.success('Upload feito com sucesso!')
             this.filesLink.push({nome: droppedFile.relativePath, link: res.urlFoto})
-            console.log(this.filesLink)
+            // console.log(this.filesLink)
           },(err) => {
             this.notifications.error('Erro ao fazer upload!')
           })
@@ -52,28 +52,28 @@ export class UploadFotoComponent implements OnInit {
       } else {
         // It was a directory (empty directories are added, otherwise only files)
         const fileEntry = droppedFile.fileEntry as FileSystemDirectoryEntry;
-        console.log(droppedFile.relativePath, fileEntry);
+        // console.log(droppedFile.relativePath, fileEntry);
       }
     }
   }
 
   public fileOver(event){
-    console.log(event);
+    // console.log(event);
   }
 
   public fileLeave(event){
-    console.log(event);
+    // console.log(event);
   }
   ngOnInit() {
   }
 
   onSelectFile(event){
-    console.log(event.target.files[0])
+    // console.log(event.target.files[0])
     const formData: FormData = new FormData();
     formData.append('files',event.target.files[0])
 
     this.service.uploadImagem(formData).subscribe(res => {
-      console.log(res);
+      // console.log(res);
     })
 
   }

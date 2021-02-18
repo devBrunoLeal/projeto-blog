@@ -22,7 +22,7 @@ public description;
     this.service.get("categories/").subscribe(
       (res) => {
         this.spinner.hide();
-        console.log(res);
+        // console.log(res);
         this.categorias = res;
       },
       (err) => {
@@ -33,11 +33,11 @@ public description;
 
 
   deletar(e){
-    console.log(e)
+    // console.log(e)
     this.service.delete("categories/"+e).subscribe(
       (res) => {
         this.spinner.hide();
-        console.log(res);
+        // console.log(res);
         this.notify.success('Deletado com sucesso', "Categoria deletada:"+res[0].description);
         this.getCategorias()
       },
@@ -56,7 +56,7 @@ public description;
     this.service.put("categories/"+e._id, e).subscribe(
       (res) => {
         this.spinner.hide();
-        console.log(res);
+        // console.log(res);
         this.notify.success('Editado com sucesso', "Categoria editada:"+res.description);
         this.getCategorias()
       },
@@ -75,7 +75,7 @@ public description;
     this.service.post("categories/", aux).subscribe(
       (res) => {
         this.spinner.hide();
-        console.log(res);
+        // console.log(res);
         this.notify.success('Criado com sucesso', "Categoria criada:"+res.description);
         this.getCategorias()
       },

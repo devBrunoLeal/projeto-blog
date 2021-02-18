@@ -37,9 +37,9 @@ export class UsuariosComponent implements OnInit {
     this.service.get("users/").subscribe(
       (res) => {
         this.spinner.hide();
-        console.log(res);
+        // console.log(res);
         this.users = res;
-       console.log(this.users)
+       // console.log(this.users)
       },
       (err) => {
         this.notify.error("Ocorreu um erro, por favor tente novamente.");
@@ -58,7 +58,7 @@ export class UsuariosComponent implements OnInit {
   }
 
   getUsers() {
-    console.log("teste");
+    // console.log("teste");
     this.service.get("users/").subscribe(
       (res) => {
         this.spinner.hide();
@@ -102,12 +102,12 @@ export class UsuariosComponent implements OnInit {
 
   editarUser(e) {
     this.userEdit = e._id
-    console.log(e);
+    // console.log(e);
     this.editar=true;
     this.form.patchValue(e);
   }
 
   deletarUser(e) {
-    console.log(e);
+    // console.log(e);
   }
 }

@@ -22,7 +22,7 @@ export class LatestComponent implements OnInit {
 
 
   this.post.get('posts/search/em-alta/10').subscribe(res =>{
-    console.log(res);
+    // console.log(res);
      this.alta = res;
     })
 

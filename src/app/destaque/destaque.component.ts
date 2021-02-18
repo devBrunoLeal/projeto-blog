@@ -83,13 +83,13 @@ export class DestaqueComponent implements OnInit {
         this.page = parseInt(res.numero);
         this.service.get("posts/pages/number/post/").subscribe((resp) => {
           this.num = resp;
-          console.log(resp);
+          // console.log(resp);
           this.callPost(res.numero);
         });
       } else {
         this.service.get("posts/pages/number/post/").subscribe((respp) => {
           this.num = respp;
-          console.log(respp);
+          // console.log(respp);
           this.callPost(0);
         });
       }
@@ -97,7 +97,7 @@ export class DestaqueComponent implements OnInit {
 
     this.service.get("posts/search/features/5").subscribe((res) => {
       this.destaques = res;
-      console.log(res);
+      // console.log(res);
       this.montaDestaque();
     });
 
@@ -113,7 +113,7 @@ export class DestaqueComponent implements OnInit {
      }
 
    }
-   console.log(this.destaquesCarousel);
+   // console.log(this.destaquesCarousel);
   }
 
   callNumber(e) {
@@ -122,7 +122,7 @@ export class DestaqueComponent implements OnInit {
 
   callPost(page) {
     this.service.getPagination("posts", page).subscribe((res) => {
-      console.log(res);
+      // console.log(res);
       this.noticias = res;
     });
   }

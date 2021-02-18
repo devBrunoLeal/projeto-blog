@@ -22,7 +22,7 @@ export class DeletarComponent implements OnInit {
     this.spinner.show();
     this.service.delete("posts/" + id).subscribe((res) => {
       this.spinner.hide();
-      console.log(res);
+      // console.log(res);
       this.notify.success('Deletado com sucesso!',res[0].title)
       this.buscarPublicacao();
     },(err) => {
@@ -32,10 +32,10 @@ export class DeletarComponent implements OnInit {
 
   buscarPublicacao(){
     this.spinner.show();
-    console.log(this.form.get('title').value)
+    // console.log(this.form.get('title').value)
     this.service.get("posts/search/" + this.form.get('title').value).subscribe((res) => {
       this.spinner.hide();
-      console.log(res);
+      // console.log(res);
       this.publicacao = res;
       if(res.length > 0){
 
