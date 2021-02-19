@@ -20,6 +20,7 @@
         <a *ngIf="isAdmin" style="background-color: black !important;" routerLink="admin/postagens" mat-button>Postagens</a>
         <a *ngIf="isAdmin" style="background-color: black !important;" routerLink="admin/categorias" mat-button>Categorias</a>
         <a *ngIf="isAdmin" style="background-color: black !important;" routerLink="admin/usuarios" mat-button>Usuarios</a>
+        <a *ngIf="isAdmin" style="background-color: black !important;" (click)="removerToken()" routerLink="admin/login" mat-button>Sair</a>
 
       </div>
     </mat-toolbar-row>
@@ -36,6 +37,7 @@
         <a *ngIf="isAdmin" style="background-color: black !important; color: white !important" routerLink="admin/postagens" mat-list-item>Postagens</a>
         <a *ngIf="isAdmin" style="background-color: black !important; color: white !important" routerLink="admin/categorias" mat-list-item>Categorias</a>
         <a *ngIf="isAdmin" style="background-color: black !important; color: white !important" routerLink="admin/usuarios" mat-list-item>Usuarios</a>
+        <a *ngIf="isAdmin" style="background-color: black !important; color: white !important" (click)="removerToken()" routerLink="admin/login" mat-list-item>Sair</a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content fxFlexFill><ng-content></ng-content></mat-sidenav-content>

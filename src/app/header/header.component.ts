@@ -29,6 +29,9 @@ public isAdmin = false;
     }
   }
 
+  removerToken(){
+    localStorage.removeItem('token-segueofluxo')
+  }
 
   openBusca(){
    if(this.showMenu == true){
