@@ -981,6 +981,9 @@ h6.has-background {
 }
 .wp-block-image img {
   max-width: 100%;
+  object-position: center;
+  object-fit: cover;
+  max-height: 425px;
 }
 .wp-block-image.aligncenter {
   text-align: center;
@@ -4877,6 +4880,8 @@ img.emoji {
   display: block;
   height: auto;
   width: 100%;
+  max-height: 180px;
+  object-fit: cover;
 }
 div.wpcf7 br {
   content: "";
