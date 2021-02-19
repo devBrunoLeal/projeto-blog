@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams, } from "@angular/common/http"
 import { Injectable } from "@angular/core";
-
+import { environment } from '../environments/environment'
 
 @Injectable({
     providedIn: 'root'
@@ -15,7 +15,7 @@ export class GlobalService  {
 
 
 
-   public api = "https://segueofluxo-com.umbler.net/"
+   public api = environment.api;
    //public api = "http://localhost:3000/"
    public apii = "https://dummyapi.io/data/api/"
    public token = localStorage.getItem('token-segueofluxo');

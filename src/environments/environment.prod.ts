@@ -1,4 +1,4 @@
 export const environment = {
-  api: 'http://localhost:3333/',
+  api: 'https://segueofluxo-com.umbler.net/',
   production: true
 };
