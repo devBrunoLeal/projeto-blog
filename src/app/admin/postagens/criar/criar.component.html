@@ -94,6 +94,30 @@
 </div>
 
 </form>
-<div style="max-width: 736px; margin: auto; margin-top: 31px; border: 1px solid black; padding: 5px; font-size: 18px; font-family: Times New RomanArial, Helvetica !important;" [innerHTML]="data | safeHtml">
+<div style="max-width: 736px; margin: auto; margin-top: 31px; border: 1px solid black; padding: 5px; font-size: 18px; font-family: Times New RomanArial, Helvetica !important;" class="conteudo-post">
 
+  <a class="title-cat">{{this.form.get('category').value}}</a>
+  <h1 class="title title--big">
+    {{this.form.get('title').value}}
+  </h1>
+  <div style="margin-bottom: 41px;" class="sub-titulo">
+    <p class="sub-titulo">{{this.form.get('subTitle').value}}</p>
+  </div>
+  <hr />
+
+  <figure style="margin-bottom: 41px;" class="wp-block-image size-large">
+    <img
+      loading="lazy"
+      width="758"
+      height="424"
+      [src]="this.form.get('featuredImgUrl').value"
+      alt=""
+      class="wp-image-100507"
+      sizes="(max-width: 758px) 100vw, 758px" style="margin-bottom: 41px;"
+    />
+  </figure>
+  <div  [innerHTML]="data | safeHtml">
+
+  </div>
 </div>
+
