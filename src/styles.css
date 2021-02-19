@@ -3972,6 +3972,7 @@ button:disabled,
 }
 .loop__item {
   height: auto;
+  position: relative;
   margin-top: 30px;
   overflow: hidden;
 }
