@@ -101,17 +101,17 @@
               >
               {{ user.about }}
               <ul class="author__social">
-                <li>
+                <li *ngIf="user.facebook">
                   <a [href]="user.facebook" target="_blank" rel="noopener nofollow"
                     ><img src="../../assets/facebook.png" alt="Facebook"
                   /></a>
                 </li>
-                <li>
+                <li *ngIf="user.twitter">
                   <a [href]="user.twitter" target="_blank" rel="noopener nofollow"
                     ><img src="../../assets/twitter.png" alt="Twitter"
                   /></a>
                 </li>
-                <li>
+                <li *ngIf="user.instagram">
                   <a [href]="user.instagram" target="_blank" rel="noopener nofollow"
                     ><img src="../../assets/instagram.png" alt="Instagram"
                   /></a>
